@@ -6,12 +6,13 @@ class Backer
     @name = name
   end
   
-  def backed_project(project)
-    @backed_projects << project
-    project.add_back
+  def initialize(name)
+    @name = name
+    @backed_projects = []
   end
   
   def back_project(project)
-    ProjectBacker.new(project,self)
+    @backed_projects << project
+    project.add_back
   end
 end
