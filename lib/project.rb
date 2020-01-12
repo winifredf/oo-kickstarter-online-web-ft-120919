@@ -4,15 +4,14 @@ class Project
   
   def initialize(title)
     @title = title
-    @backers = []
   end
   
-  def back_project(project)
-    @back_project = []
+  def backers
+    prbs = ProjectBacker.all.select {|prb| prb.project == self}
+    prbs.map {|prb| prb.backer}
   end
   
   def add_backer(backer)
-    @backers << backer
-    backer.backed_project(self) unless backer.backed_projects.include?(self)
+    ProjectBacker.new(self, backer)
   end
 end
