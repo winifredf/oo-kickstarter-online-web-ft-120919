@@ -6,13 +6,12 @@ class Backer
     @name = name
   end
   
-  def initialize(name)
-    @name = name
-    @backed_projects = []
+  def back_project
+    pbrs = ProjectBacker.all select {|pbr| pbr.backer == self}
+    pbrs.map {|pbr| prb.project}
   end
   
   def back_project(project)
-    @backed_projects << project
-    project.add_back
+    ProjectBacker.new(project, self)
   end
 end
