@@ -16,3 +16,10 @@ class Backer
     ProjectBacker.new(project, self)
   end
 end
+
+class ProjectBacker
+  attr_reader :project, :backer
+  
+  @@all = []
+  
+  
