@@ -13,6 +13,4 @@ class ProjectBacker
     @@all
   end
   
-  def back_project(project)
-    
 end
