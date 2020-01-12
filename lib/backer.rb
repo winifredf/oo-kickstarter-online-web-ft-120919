@@ -8,7 +8,6 @@ class Backer
   
   def back_project(project)
     pb = ProjectBacker.all.select {|pb| pb.backer == self)}
-    pbs.map {|pb| pb.project}
   end
   
   def back_project(project)
