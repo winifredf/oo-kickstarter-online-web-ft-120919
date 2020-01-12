@@ -7,7 +7,7 @@ class Backer
   end
   
   def back_project(project)
-    @backed_projects << project
-    project.add_backer(self) unless project.backers.include?(self)
+    pb = ProjectBacker.all.select {|pb| pb.backer == self)}
+    pbs.map {|pb| pb.project}
   end
 end
