@@ -24,11 +24,14 @@ class ProjectBacker
   
   def initialize(project, backer)
     @project = project
-    @backer = backer
+    @backers = []
     @@all << self
   end
   
   def self.all
     @@all
   end
+  
+  def back_project(project)
+    
 end
