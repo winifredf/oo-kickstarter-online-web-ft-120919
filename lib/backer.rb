@@ -3,9 +3,9 @@ class ProjectBacker
   
   @@all = []
   
-  def initialize(project, backer)
+  def initialize(project, Backer)
     @project = project
-    @backer = backer
+    @Backer = backer
     @@all << self
   end
   
