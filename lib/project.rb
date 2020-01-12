@@ -7,12 +7,12 @@ class Project
     @backers = []
   end
   
-  def backers
-    prbs = ProjectBacker.all.select {|prb| prb.project == self}
-    prbs.map {|prb| prb.backer}
+  def back_project(project)
+    @back_project = []
   end
   
   def add_backer(backer)
-    ProjectBacker.new(self, backer)
+    @backers << backer
+    backer.backed_project(self) unless backer.backed_projects.include?(self)
   end
 end
