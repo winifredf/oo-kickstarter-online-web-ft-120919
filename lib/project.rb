@@ -17,3 +17,4 @@ class Project
   end
 end
 
+project = Project.new("Project With So Much Amaze")
